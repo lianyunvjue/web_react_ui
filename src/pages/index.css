@@ -1,0 +1,6 @@
+.page {
+  display: flex;
+}
+.page .title {
+  background: #79f29d;
+}
