@@ -41,7 +41,8 @@ axios.interceptors.request.use(
         axios.defaults.headers.post['Content-Type'] =
           'application/json;charset=UTF-8';
       } else {
-        config.data = qs.stringify(config.data);
+        // config.data = qs.stringify(config.data);
+        config.data = config.data;
       }
     }
     return config;
@@ -87,15 +88,7 @@ const fetch = (options: any) => {
 /*成功获取数据处理*/
 const handleData = (res: any) => {
   console.log('Responce Success: ', res);
-  const data = res.data;
-  if (data && data.error && !data.success) {
-    if (data.error.message) {
-      message.error(data.error.message);
-    } else {
-      message.error(data.msg);
-    }
-  }
-  return { ...data, success: data.message || data.message == 'Success' };
+  return res.data;
 };
 
 /*错误信息处理*/

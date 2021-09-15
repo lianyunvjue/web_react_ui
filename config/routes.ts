@@ -1,11 +1,14 @@
 export default [
   {
     path: '/',
-    component: '@pages//defaultPage/index',
+    name: '默认页',
+    component: '@/pages/defaultPage/index',
   },
   {
     path: '/posts',
-    component: '@pages/postsPage/index',
+    name: '博客管理',
+    hideInMenu: false,
+    component: '@/pages/postsPage/index',
   },
   // {
   //   path: '/user',

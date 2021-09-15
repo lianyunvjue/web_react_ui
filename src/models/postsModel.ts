@@ -5,19 +5,20 @@ export default {
 
   state: {
     postsListData: [],
+    loading: false,
   },
 
   effects: {
-    *fetchData(_, { put, call, take }) {
+    *fetchPostsData(_, { put, call, take }) {
       const rsp = yield call(queryPostsList);
-      const { error, data } = rsp;
+      // const { error, data } = rsp;
       console.log('博客接口数据rsp--------', rsp);
-      if (error) {
-        return;
-      }
+      // if (error) {
+      //   return;
+      // }
       yield put({
         type: 'updatePostData',
-        payload: data,
+        payload: rsp,
       });
     },
   },
@@ -26,7 +27,7 @@ export default {
     updatePostData(state: any, { payload }) {
       return {
         ...state,
-        postsListData: payload.data,
+        postsListData: payload,
       };
     },
   },
@@ -34,7 +35,7 @@ export default {
   subscriptions: {
     setup({ dispatch }) {
       dispatch({
-        type: 'fetchData',
+        type: 'fetchPostsData',
       });
     },
   },
