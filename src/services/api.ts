@@ -8,7 +8,7 @@ import request from '@/tools/request';
 // 请求博客列表
 export async function queryPostsList(params: any) {
   return request({
-    url: `${HOST_TEST}posts`,
+    url: `/posts`,
     method: 'get',
     data: params,
   });

@@ -9,7 +9,7 @@ export default {
   },
 
   effects: {
-    *fetchPostsData(_, { put, call, take }) {
+    *fetchPostsData(_, { put, call }) {
       const rsp = yield call(queryPostsList);
       // const { error, data } = rsp;
       console.log('博客接口数据rsp--------', rsp);
