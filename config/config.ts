@@ -1,7 +1,7 @@
 import { defineConfig } from 'umi';
 import routes from './routes';
 
-export default {
+export default defineConfig({
   routes: routes,
   base: '/docs/',
   publicPath: '/static/',
@@ -33,4 +33,4 @@ export default {
   },
   fastRefresh: {},
   dynamicImport: {},
-};
+});
