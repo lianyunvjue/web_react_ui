@@ -7,7 +7,7 @@ export default [
   {
     path: '/posts',
     name: '博客管理',
-    hideInMenu: false,
+    // hideInMenu: false,
     component: '@/pages/postsPage/index',
   },
   // {

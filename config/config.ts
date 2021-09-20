@@ -6,6 +6,15 @@ export default defineConfig({
   base: '/docs/',
   publicPath: '/static/',
   hash: true,
+  plugins: [
+    [
+      'umi-plugin-react',
+      {
+        antd: true,
+        dva: true,
+      },
+    ],
+  ],
   history: {
     type: 'hash',
   },
@@ -14,7 +23,6 @@ export default defineConfig({
   //接入antd@4.0
   locale: {
     default: 'zh-CN',
-    antd: true,
     baseNavigator: true,
   },
   antd: {},
